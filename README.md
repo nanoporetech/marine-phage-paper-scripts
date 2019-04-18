@@ -11,3 +11,5 @@ This repository contains additional analysis scripts used in the paper: Beaulaur
 * scikit-learn>=0.19.1
 * hdbscan>=0.8.20
 * umap-learn>=0.3.8
+
+All dependencies are available via conda.
