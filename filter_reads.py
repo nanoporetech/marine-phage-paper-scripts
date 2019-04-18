@@ -11,7 +11,7 @@ def parse_args():
 
     # Positional mandatory arguments
     parser.add_argument("fasta", help="Fasta file containing the sequences to filter", type=str)
-    parser.add_argument("genome_size", help="Fasta file containing the sequences in a specific", type=int)
+    parser.add_argument("genome_size", help="Expected genome size (bp)", type=int)
 
     # Optional arguments
     parser.add_argument("-p", "--prefix", help="Output file prefix [len_filtered_reads]", type=str, default="len_filtered_reads")
