@@ -11,7 +11,7 @@ def parse_args():
     parser = argparse.ArgumentParser()
 
     # Positional mandatory arguments
-    parser.add_argument("fasta", help="Fasta file containing the sequences in a specific", type=str)
+    parser.add_argument("fasta", help="Fasta file containing the sequences to check for presence of DTR", type=str)
 
     # Optional arguments
     parser.add_argument("-p", "--prefix", help="Output file prefix (for <prefix>.dtr.stats.tsv and <prefix>.dtr.fasta) [output]", type=str, default="output")
