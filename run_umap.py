@@ -14,7 +14,7 @@ def parse_args():
     parser.add_argument("kmer_freq", help="File containing log-normalized k-mer frequency vectors for reads (read, length, kmer1, kmer2, etc).", type=str)
 
     # Optional arguments
-    parser.add_argument("-p", "--prefix", help="Output file prefix [umap]", type=str, default="umap")
+    parser.add_argument("-p", "--prefix", help="Output file prefix (<prefix>.umap.tsv) [output]", type=str, default="output")
     parser.add_argument("-l", "--min_length", help="Minimum read length to include in the 2D map [15000]", type=int, default=15000)
     parser.add_argument("-d", "--min_dist", help="Minimum distance apart that points are allowed to be in the 2D map [0.1]", type=int, default=0.1)
     parser.add_argument("-n", "--n_neighbors", help="Number of neighbors to look at when learning the manifold structure [15]", type=int, default=15)
