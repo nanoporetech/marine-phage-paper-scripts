@@ -14,7 +14,7 @@ def parse_args():
     parser.add_argument("map_coords", help="File containing data coordinates to be binned (e.g. output from UMAP).", type=str)
 
     # Optional arguments
-    parser.add_argument("-p", "--prefix", help="Output file prefix [hdbscan]", type=str, default="hdbscan")
+    parser.add_argument("-p", "--prefix", help="Output file prefix (<prefix>.hdbscan.tsv) [output]", type=str, default="output")
     parser.add_argument("-c", "--min_cluster", help="Minimum number of reads to call a bin [30]", type=int, default=30)
 
     # Parse arguments
@@ -31,7 +31,7 @@ def main(args):
     df["bin_id"] = hdbscan.HDBSCAN(min_cluster_size=args.min_cluster).fit_predict(X)
     
     print("Created {} bins with > {} reads".format(len(df["bin_id"].unique()), args.min_cluster))
-    df.to_csv("{}.tsv".format(args.prefix), sep="\t", index=False)
+    df.to_csv("{}.hdbscan.tsv".format(args.prefix), sep="\t", index=False)
 
 if __name__=="__main__":
     args = parse_args()
